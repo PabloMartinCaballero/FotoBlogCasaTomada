@@ -1,0 +1,356 @@
+/*Formateo global*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Fonts-face : importa las fuentes descargadas en el documento base*/
+
+@font-face {
+    font-family: AMERICAN_HORROR_STORY ;
+    src: url(./fonts/AMERICAN_HORROR_STORY.ttf);
+}
+    
+
+/* Cuadrilla Grid-Desktop*/
+
+.grid-container{
+    
+        display: grid;
+        grid-template-columns: [col-start] 1fr [mid-start] 2fr [mid-end] 1fr [col-end];
+        grid-template-rows: [row-start]255px[row-mid-start] 200px [row-center-start] 550px [row-center-end] 300px [row-mid-end] 200px [row-end];
+
+        /*min-height : altura minima , al colocar el 100vh ocupara todo el alto del view port*/
+        min-height: 100vh;
+        gap: 5px;
+        border: 5px solid black;
+      
+}
+
+.header{
+
+    /*Posicionamiento en la grilla*/
+        background-color: grey;
+        grid-column-start: col-start;
+        grid-column-end: col-end;
+
+    /*Estilos*/    
+
+}
+
+
+.logo-container{
+    display: flex;
+    justify-content: center;
+}
+
+.font-f{
+    color: white;
+    font-family: AMERICAN_HORROR_STORY ;
+    font-size: 100px;
+    padding-top: 15px;
+}
+
+
+.blog-name{
+    /*Posicionamiento en la grilla*/
+        background-color: #400112;
+        grid-column-start: mid-start;
+        grid-column-end: mid-end;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-family: 'Shadows Into Light', cursive;;
+}
+
+.carousel{
+    /*Posicionamiento en la grilla*/
+        background-color: BLA;
+        grid-column-start: mid-start;
+        grid-column-end: mid-end;
+}
+
+.carousel-container{
+    height: 100%;
+}
+
+.carousel-inner{
+    height: 100%;
+}
+
+.skull-right{
+    margin-right: 100px;
+}
+
+.skull-left{
+    margin-left: 100px;
+}
+
+.blog-description{
+    /*Posicionamiento en la grilla*/
+        background-color: #400112;
+        grid-column-start: mid-start;
+        grid-column-end: mid-end;
+        text-align: center;
+        color: white;
+        font-size: larger;
+        padding: 10px
+        
+        ;
+}
+
+.aside-1{
+    /*Posicionamiento en la grilla*/
+        background-color: hotpink;
+        grid-row-start: row-mid-start;
+        grid-row-end: row-mid-end;
+        grid-column-start: col-start;
+        grid-column-end: mid-start;
+
+    /*Estilos*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-image: url(./imagenes/fondo-textura-hormigon-oscuro.jpg)
+    
+}
+  
+.card-style{
+    color: black;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+
+.aside-2{
+    /*Posicionamiento en la grilla*/
+        background-color: orange;
+
+
+        grid-column: mid-end / col-end;
+        /*grid-column-start: mid-end;
+        grid-column-end: col-end;*/
+
+
+        grid-row : row-mid;
+        /*
+        grid-row-start: row-mid-start;
+        grid-row-end: row-mid-end;
+        */
+
+
+        /*Estilos*/
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        background-image: url(./imagenes/fondo-textura-hormigon-oscuro.jpg)
+}
+
+.footer{
+    /*Posicionamiento en la grilla*/
+        background-color: violet;
+        grid-row-start: row-mid-end;
+        grid-row-end: row-end;
+        grid-column: col;
+}
+
+.footer-container{
+    
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: black;
+    font-size: medium;
+    padding: 10px;
+}
+
+.footer-image{
+    height:100%;
+}
+
+.footer-paragraph{
+    text-align: center;
+}
+/*Mobile*/
+
+@media only screen and (max-width:768px) {
+    
+    .blog-name{
+        /*Cuando los valores de grid-column o de grid-row coinciden de forma que el primero termina con el sufijo -start y el segundo terminada con el sufijo -end, se pueden abreviar*/    
+            grid-column: col;
+            background-color: #400112;;
+    }
+
+    .aside-1{
+        display: none;
+    }
+    
+    .aside-2{
+        display: none;
+    }
+
+    .carousel{
+        /*Posicionamiento en la grilla*/
+            background-color: black;
+            grid-column: col;
+    }
+    
+    .blog-description{
+        /*Posicionamiento en la grilla*/
+            background-color:  #400112;
+            grid-column: col;
+            text-align: center;
+    }
+}
+
+
+@media only screen and (max-width:440px) {
+
+
+    *{
+        margin: 0;
+        padding: 0;
+        
+    }
+    
+    /*Fonts-face : importa las fuentes descargadas en el documento base*/
+    
+    @font-face {
+        font-family: AMERICAN_HORROR_STORY ;
+        src: url(./fonts/AMERICAN_HORROR_STORY.ttf);
+    }
+        
+    
+    /* Cuadrilla Grid-Desktop*/
+    
+    .grid-container{
+        
+            display: grid;
+            grid-template-columns: [col-start] 1fr [col-end];
+            grid-template-rows: [row-start]163px[row-mid-start] 200px [row-center-start] 350px [row-center-end] 300px [row-mid-end] 200px [row-end];
+    
+            /*min-height : altura minima , al colocar el 100vh ocupara todo el alto del view port*/
+            min-height: 100vh;
+            gap: 5px;
+            border: 5px solid black;
+          
+    }
+    
+    .header{
+    
+        /*Posicionamiento en la grilla*/
+            background-color: grey;
+            grid-column : col;
+    
+        /*Estilos*/    
+    
+    }
+    
+    
+    .logo-container{
+
+        display: flex;
+        justify-content: center;
+
+    }
+    
+    .image-logo{
+        height: 100px;
+    }
+
+    .font-f{
+        color: white;
+        font-family: AMERICAN_HORROR_STORY ;
+        font-size: 50px;
+        padding-top: 15px;
+    }
+    
+    
+    .blog-name{
+        /*Posicionamiento en la grilla*/
+            background-color: #400112;
+            grid-column : col;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-family: 'Shadows Into Light', cursive;;
+    }
+    
+    .carousel{
+        /*Posicionamiento en la grilla*/
+            grid-column : col;
+    }
+    
+    .carousel-container{
+        height: 100%;
+    }
+    
+    .carousel-inner{
+        height: 100%;
+    }
+    
+    .skull-right{
+        margin-right: 100px;
+        height: 35px;
+    }
+    
+    .skull-left{
+        margin-left: 100px;
+        height: 35px;
+    }
+
+    
+    .blog-description{
+        /*Posicionamiento en la grilla*/
+            background-color: #400112;
+            grid-column: col;
+            text-align: center;
+            color: white;
+            font-size: larger;
+            padding: 10px
+            
+            ;
+    }
+    
+   
+    .footer{
+        /*Posicionamiento en la grilla*/
+            background-color: violet;
+            grid-row-start: row-mid-end;
+            grid-row-end: row-end;
+            grid-column: col;
+    }
+    
+    .footer-container{
+        
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        background-color: black;
+        font-size: medium;
+        padding: 10px;
+    }
+    
+    .footer-image{
+        height:100%;
+    }
+    
+    .footer-paragraph{
+        text-align: center;
+        font-size: x-small;
+    }
+
+
+
+}
